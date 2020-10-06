@@ -25,4 +25,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.523" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go to quiz"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="446dp"
+        android:onClick="quizFunction"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
