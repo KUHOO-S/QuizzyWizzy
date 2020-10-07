@@ -31,7 +31,7 @@ public class SearchBarActivity extends AppCompatActivity {
         list.add("kuhoo");
         list.add("ji0");
 
-        adapter= new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,list);
+        adapter= new ArrayAdapter<>(this,R.layout.searchtextcolor,list);
         quizList.setAdapter(adapter);
 
         quizSearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
