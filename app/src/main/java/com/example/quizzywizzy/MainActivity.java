@@ -20,13 +20,15 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"hey", Toast.LENGTH_LONG).show();
         Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
         //i.putExtra("Value1", "Android By Javatpoint");
-        i.putExtra("Value1", "Simple Tutorial");
+        i.putExtra("Quiz", "Simple Tutorial");
         // Set the request code to any code you like, you can identify the
         // callback via this code
         startActivity(i);
 
     }
     public void registerFunction(View view){
+        Intent i = new Intent(getApplicationContext(), SearchBarActivity.class);
+        startActivity(i);
 
     }
 }

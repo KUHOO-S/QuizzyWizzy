@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context=".MainActivity">
 
     <TextView
@@ -38,6 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="172dp"
+        android:background="@color/colorAccent"
         android:onClick="loginFunction"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,10 +62,10 @@
         android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="registerFunction"
         android:text="Register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn1"
-        tools:layout_editor_absoluteX="162dp"
-        android:onClick="registerFunction"/>
+        tools:layout_editor_absoluteX="162dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
