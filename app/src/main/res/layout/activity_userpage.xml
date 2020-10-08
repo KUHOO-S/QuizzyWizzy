@@ -30,9 +30,7 @@
         android:src="@drawable/saurabh"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
         app:strokeColor="@color/colorButton"
-        app:strokeWidth="6dp">
-
-    </com.google.android.material.imageview.ShapeableImageView>
+        app:strokeWidth="6dp"></com.google.android.material.imageview.ShapeableImageView>
 
     <RelativeLayout
         android:layout_width="350dp"
@@ -40,9 +38,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginBottom="388dp"
-        android:background="@drawable/line_draw">
-
-    </RelativeLayout>
+        android:background="@drawable/line_draw"></RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -3,7 +3,7 @@
     android:id="@android:id/text1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:textSize="7pt"
+    android:textSize="10pt"
     android:textColor="@color/colorPrimaryText"
     />
 

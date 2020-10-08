@@ -14,14 +14,12 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         Bundle extras = getIntent().getExtras();
-        String value1 = extras.getString("Value1");
-        TextView textbox = (TextView) findViewById(R.id.txtbox);
-        textbox.setText(value1);
+
 
     }
     public void quizFunction(View view)
     {
-        Intent i = new Intent(getApplicationContext(), QuizActivity.class);
+        Intent i = new Intent(getApplicationContext(), SearchBarActivity.class);
         i.putExtra("Quiz", "Simple Tutorial");
         startActivity(i);
     }
