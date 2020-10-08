@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -16,16 +18,20 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import static com.android.volley.Request.Method.GET;
 
 public class MainActivity extends AppCompatActivity {
+    TextView txt1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        txt1=(TextView)findViewById(R.id.txt1);
 
         String URL="https://opentdb.com/api.php?amount=5&category=23&difficulty=easy&type=multiple";
 
@@ -39,6 +45,19 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response){
                         Log.d("myTag", response.toString());
+
+                        JSONObject myObject = null;
+                        try {
+                            myObject = new JSONObject(response.toString());
+
+                            Log.d("myTag", myObject.getString("results"));
+                            txt1.setText(myObject.get("results").toString());
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
 
                     }
                 },
