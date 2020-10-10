@@ -41,7 +41,7 @@ public class SearchBarActivity extends AppCompatActivity {
         list.add("Video Games");
         urlList.add("https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=multiple");
 
-        list.add("Science & Environment");
+        list.add("Science & giEnvironment");
         urlList.add("https://opentdb.com/api.php?amount=5&category=17&difficulty=easy&type=multiple");
 
         list.add("Video Games");

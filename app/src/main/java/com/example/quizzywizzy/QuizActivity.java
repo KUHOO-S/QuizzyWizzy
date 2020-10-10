@@ -51,7 +51,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
         callRequest(URL);
         //loadQuestion();
-       // Intent i = new Intent(getApplicationContext(), ResultActivity.class);
+        // Intent i = new Intent(getApplicationContext(), ResultActivity.class);
         //startActivity(i);
 
     }
@@ -170,6 +170,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
         //MAKE IT GREEN SAURABH
         optionSelected=v.getId();
+
 
         String answer=selected.getText().toString();
 

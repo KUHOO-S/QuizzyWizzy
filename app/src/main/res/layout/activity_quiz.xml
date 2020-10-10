@@ -8,43 +8,34 @@
     tools:context=".QuizActivity">
 
 
-    <ImageButton
-        android:id="@+id/quiz_close_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:background="@android:color/transparent"
-        android:padding="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.953"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_delete" />
-
     <TextView
         android:id="@+id/quiz_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="86dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="28dp"
         android:gravity="center_horizontal"
         android:text="Loading Quiz..."
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/quiz_question_progress"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quiz_close_btn" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/quiz_question_number_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="28dp"
         android:text="Question"
         android:textColor="@color/colorPrimaryText"
-        app:layout_constraintEnd_toEndOf="@+id/quiz_close_btn"
         app:layout_constraintStart_toStartOf="@+id/quiz_title"
         app:layout_constraintTop_toBottomOf="@+id/quiz_title" />
 
@@ -63,11 +54,11 @@
         android:id="@+id/quiz_question_progress"
         style="?android:attr/progressBarStyle"
         android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_height="0dp"
         android:layout_marginTop="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/quiz_question_number"
+        android:layout_marginBottom="497dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/quiz_title"
-        app:layout_constraintStart_toStartOf="@+id/quiz_close_btn"
         app:layout_constraintTop_toBottomOf="@+id/quiz_title" />
 
     <TextView
@@ -106,6 +97,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:background="@color/colorAccent"
+        android:onClick="onClick"
         android:padding="12dp"
         android:text="Option Button"
         android:textAllCaps="false"
@@ -113,8 +105,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quiz_question"
-        android:onClick="onClick"/>
+        app:layout_constraintTop_toBottomOf="@+id/quiz_question" />
 
     <Button
         android:id="@+id/quiz_option_two"
@@ -124,6 +115,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@color/colorAccent"
+        android:onClick="onClick"
         android:padding="12dp"
         android:text="Option Button"
         android:textAllCaps="false"
@@ -131,8 +123,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quiz_option_one"
-        android:onClick="onClick"/>
+        app:layout_constraintTop_toBottomOf="@+id/quiz_option_one" />
 
     <Button
         android:id="@+id/quiz_option_three"
@@ -142,6 +133,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@color/colorAccent"
+        android:onClick="onClick"
         android:padding="12dp"
         android:text="Option Button"
         android:textAllCaps="false"
@@ -149,8 +141,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quiz_option_two"
-        android:onClick="onClick"/>
+        app:layout_constraintTop_toBottomOf="@+id/quiz_option_two" />
 
     <Button
         android:id="@+id/quiz_option_four"
@@ -160,28 +151,11 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@color/colorAccent"
+        android:onClick="onClick"
         android:padding="12dp"
         android:text="Option Button"
         android:textAllCaps="false"
         android:textColor="@color/colorPrimaryText"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quiz_option_three"
-        android:onClick="onClick"/>
-
-    <TextView
-        android:id="@+id/quiz_question_feedback"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="32dp"
-        android:gravity="center_horizontal"
-        android:text="Verifying Answer"
-        android:textAlignment="center"
-        android:textColor="@color/colorButton"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -196,12 +170,12 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:background="@color/colorButton"
+        android:onClick="nextQuestion"
         android:text="Next Question"
         android:textAllCaps="false"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="nextQuestion"/>
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
