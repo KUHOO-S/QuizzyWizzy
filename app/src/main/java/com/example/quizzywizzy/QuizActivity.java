@@ -33,6 +33,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     //Button quiz_option_one=(Button)findViewById(R.id.quiz_option_one);
     //quiz_option_one.setOnClickListener(this);
    QuestionSet data;
+   Button selected;
 
 
 
@@ -135,14 +136,17 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             n=n+1;
             //Calculate marks
 
-            /*Button selected=(Button)findViewById(optionSelected);
+            Button selected=(Button)findViewById(optionSelected);
             String answer=selected.getText().toString();
             if(answer.equals(data.results[n].correct_answer)) {
                 score += 1;
                 Toast.makeText(getApplicationContext(), "hey", Toast.LENGTH_LONG).show();
             }
             Toast.makeText(getApplicationContext(), "hesadfy", Toast.LENGTH_LONG).show();
-            */loadQuestion();
+            int greenColorValue = Color.parseColor("#454545");
+            selected.setBackgroundColor(greenColorValue);
+
+            loadQuestion();
 
         }
         else
@@ -159,10 +163,10 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        Button selected=(Button)findViewById(v.getId());
+        selected=(Button)findViewById(v.getId());
 
-        int greenColorValue = Color.parseColor("#00ff00");
-        selected.setBackgroundColor(greenColorValue);
+        int selectedColorValue = Color.parseColor("#ED85FF");
+        selected.setBackgroundColor(selectedColorValue);
 
         //MAKE IT GREEN SAURABH
         optionSelected=v.getId();
