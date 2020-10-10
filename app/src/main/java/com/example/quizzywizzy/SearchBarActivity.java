@@ -33,28 +33,28 @@ public class SearchBarActivity extends AppCompatActivity {
         urlList=new ArrayList<String>();
 
         list.add("Sports");
-        urlList.add("x");
+        urlList.add("https://opentdb.com/api.php?amount=5&category=21&difficulty=easy&type=multiple");
 
         list.add("Mathematics");
-        urlList.add("x");
+        urlList.add("https://opentdb.com/api.php?amount=5&category=19&difficulty=easy&type=multiple");
 
         list.add("Video Games");
-        urlList.add("x");
+        urlList.add("https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=multiple");
 
         list.add("Science & Environment");
-        urlList.add("x");
+        urlList.add("https://opentdb.com/api.php?amount=5&category=17&difficulty=easy&type=multiple");
 
         list.add("Video Games");
-        urlList.add("x");
+        urlList.add("https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=multiple");
 
         list.add("History");
         urlList.add("https://opentdb.com/api.php?amount=5&category=23&difficulty=easy&type=multiple");
 
         list.add("Art");
-        urlList.add("x");
+        urlList.add("https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple");
 
         list.add("Animals");
-        urlList.add("x");
+        urlList.add("https://opentdb.com/api.php?amount=5&category=27&difficulty=easy&type=multiple");
 
 
         adapter= new ArrayAdapter<>(this,R.layout.searchtextcolor,list);
