@@ -17,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,6 +27,7 @@ import static com.android.volley.Request.Method.GET;
 
 public class MainActivity extends AppCompatActivity {
     TextView txt1;
+    JSONObject myObject=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +47,13 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response){
                         Log.d("myTag", response.toString());
-
-                        JSONObject myObject = null;
+                        loadData(response.toString());
+                        //JSONObject myObject = null;
                         try {
                             myObject = new JSONObject(response.toString());
 
                             Log.d("myTag", myObject.getString("results"));
-                            txt1.setText(myObject.get("results").toString());
+                            //txt1.setText(myObject.get("results").toString());
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -76,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
         );
         requestQueue.add(objectRequest);
-
+        //loadData();
 
 
 
@@ -98,5 +100,10 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(getApplicationContext(), SearchBarActivity.class);
         startActivity(i);
 
+    }
+
+    public void loadData(String x){
+        QuestionSet data= new Gson().fromJson(x,QuestionSet.class);
+        Log.d("myTag",data.results[0].question);
     }
 }

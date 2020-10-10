@@ -113,7 +113,8 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quiz_question" />
+        app:layout_constraintTop_toBottomOf="@+id/quiz_question"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/quiz_option_two"
@@ -130,7 +131,8 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quiz_option_one" />
+        app:layout_constraintTop_toBottomOf="@+id/quiz_option_one"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/quiz_option_three"
@@ -147,7 +149,8 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quiz_option_two" />
+        app:layout_constraintTop_toBottomOf="@+id/quiz_option_two"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/quiz_option_four"
@@ -165,7 +168,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quiz_option_three" />
+        app:layout_constraintTop_toBottomOf="@+id/quiz_option_three"
+        android:onClick="onClick"/>
 
     <TextView
         android:id="@+id/quiz_question_feedback"
@@ -198,5 +202,6 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="nextQuestion"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

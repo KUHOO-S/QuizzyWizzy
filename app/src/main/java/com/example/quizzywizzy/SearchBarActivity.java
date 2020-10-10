@@ -18,6 +18,9 @@ public class SearchBarActivity extends AppCompatActivity {
     ListView quizList;
     ArrayList<String> list;
     ArrayAdapter<String> adapter;
+
+    ArrayList<String> urlList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +30,32 @@ public class SearchBarActivity extends AppCompatActivity {
         quizList=(ListView)findViewById(R.id.listView);
 
         list=new ArrayList<String>();
-        list.add("hi");
-        list.add("kuhoo");
-        list.add("ji0");
+        urlList=new ArrayList<String>();
+
+        list.add("Sports");
+        urlList.add("x");
+
+        list.add("Mathematics");
+        urlList.add("x");
+
+        list.add("Video Games");
+        urlList.add("x");
+
+        list.add("Science & Environment");
+        urlList.add("x");
+
+        list.add("Video Games");
+        urlList.add("x");
+
+        list.add("History");
+        urlList.add("https://opentdb.com/api.php?amount=5&category=23&difficulty=easy&type=multiple");
+
+        list.add("Art");
+        urlList.add("x");
+
+        list.add("Animals");
+        urlList.add("x");
+
 
         adapter= new ArrayAdapter<>(this,R.layout.searchtextcolor,list);
         quizList.setAdapter(adapter);
@@ -55,6 +81,7 @@ public class SearchBarActivity extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), QuizActivity.class);
                 //i.putExtra("Value1", "Android By Javatpoint");
                 i.putExtra("Quiz", list.get(position));
+                i.putExtra("URL",urlList.get(position));
                 // Set the request code to any code you like, you can identify the
                 // callback via this code
                 startActivity(i);
