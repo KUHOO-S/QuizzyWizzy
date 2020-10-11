@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -28,7 +28,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     int n=1;            //variable for next question
     String APIResponse;
     int numberOfQuestions=5;
-    int score=10;
+    int score=2;
     int optionSelected;
     //Button quiz_option_one=(Button)findViewById(R.id.quiz_option_one);
     //quiz_option_one.setOnClickListener(this);
@@ -140,9 +140,9 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             String answer=selected.getText().toString();
             if(answer.equals(data.results[n].correct_answer)) {
                 score += 1;
-                Toast.makeText(getApplicationContext(), "hey", Toast.LENGTH_LONG).show();
+
             }
-            Toast.makeText(getApplicationContext(), "hesadfy", Toast.LENGTH_LONG).show();
+
             int greenColorValue = Color.parseColor("#454545");
             selected.setBackgroundColor(greenColorValue);
 
@@ -168,7 +168,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         int selectedColorValue = Color.parseColor("#ED85FF");
         selected.setBackgroundColor(selectedColorValue);
 
-        //MAKE IT GREEN SAURABH
+
         optionSelected=v.getId();
 
 
