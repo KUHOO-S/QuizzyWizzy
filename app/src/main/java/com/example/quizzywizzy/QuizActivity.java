@@ -25,7 +25,7 @@ import org.json.JSONObject;
 public class QuizActivity extends AppCompatActivity implements View.OnClickListener {
     TextView quiz_title;
     JSONObject myObject=null;
-    int n=0;            //variable for next question
+    int n=1;            //variable for next question
     String APIResponse;
     int numberOfQuestions=5;
     int score=10;
@@ -107,7 +107,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         quiz_question.setText(data.results[n].question);
 
         TextView quiz_question_number = (TextView) findViewById(R.id.quiz_question_number);
-        quiz_question_number.setText("hi");
+        quiz_question_number.setText(String.valueOf(n));
 
 
 
