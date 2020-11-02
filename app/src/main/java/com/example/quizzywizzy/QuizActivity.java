@@ -25,7 +25,7 @@ import org.json.JSONObject;
 public class QuizActivity extends AppCompatActivity implements View.OnClickListener {
     TextView quiz_title;
     JSONObject myObject=null;
-    int n=1;            //variable for next question
+    int n=0;            //variable for next question
     String APIResponse;
     int numberOfQuestions=5;
 
@@ -135,8 +135,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void nextQuestion(View view) {
-        if (n <numberOfQuestions-1)
-        {
+
 
 
             //Calculate marks
@@ -162,10 +161,12 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-
+        if (n <numberOfQuestions-1)
+        {
             n=n+1;
             answer="null";
             loadQuestion();
+
 
         }
         else
