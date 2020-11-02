@@ -38,6 +38,10 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     //quiz_option_one.setOnClickListener(this);
    QuestionSet data;
    Button selected;
+    Button quiz_option_one;
+    Button quiz_option_two;
+    Button quiz_option_three;
+    Button quiz_option_four;
 
 
 
@@ -53,6 +57,11 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
         quiz_title = (TextView) findViewById(R.id.quiz_title);
         quiz_title.setText(value1);
+
+        quiz_option_one=(Button)findViewById(R.id.quiz_option_one);
+        quiz_option_two=(Button)findViewById(R.id.quiz_option_two);
+        quiz_option_three=(Button)findViewById(R.id.quiz_option_three);
+        quiz_option_four=(Button)findViewById(R.id.quiz_option_four);
 
         callRequest(URL);
         //loadQuestion();
@@ -104,6 +113,12 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void loadQuestion(){
+        int defaultColorValue = Color.parseColor("#2D2D2E");
+        quiz_option_one.setBackgroundColor(defaultColorValue);
+        quiz_option_two.setBackgroundColor(defaultColorValue);
+        quiz_option_three.setBackgroundColor(defaultColorValue);
+        quiz_option_four.setBackgroundColor(defaultColorValue);
+
         data= new Gson().fromJson(APIResponse,QuestionSet.class);
 
         Log.d("myTag",data.results[n].question);
@@ -116,19 +131,15 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-        Button quiz_option_one=(Button)findViewById(R.id.quiz_option_one);
         quiz_option_one.setText(data.results[n].incorrect_answers[0]);
         quiz_option_one.setOnClickListener(this);
 
-        Button quiz_option_two=(Button)findViewById(R.id.quiz_option_two);
         quiz_option_two.setText(data.results[n].incorrect_answers[1]);
         quiz_option_two.setOnClickListener(this);
 
-        Button quiz_option_three=(Button)findViewById(R.id.quiz_option_three);
         quiz_option_three.setText(data.results[n].incorrect_answers[2]);
         quiz_option_three.setOnClickListener(this);
 
-        Button quiz_option_four=(Button)findViewById(R.id.quiz_option_four);
         quiz_option_four.setText(data.results[n].correct_answer);
         quiz_option_four.setOnClickListener(this);
 
@@ -183,10 +194,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Button quiz_option_one=(Button)findViewById(R.id.quiz_option_one);
-        Button quiz_option_two=(Button)findViewById(R.id.quiz_option_two);
-        Button quiz_option_three=(Button)findViewById(R.id.quiz_option_three);
-        Button quiz_option_four=(Button)findViewById(R.id.quiz_option_four);
 
         selected=(Button)findViewById(v.getId());
         int defaultColorValue = Color.parseColor("#2D2D2E");
