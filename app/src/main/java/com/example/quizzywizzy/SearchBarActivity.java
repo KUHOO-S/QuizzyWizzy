@@ -76,7 +76,7 @@ public class SearchBarActivity extends AppCompatActivity {
         quizList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
     public void onItemClick(AdapterView<?> l, View v, int position, long id){
-                Toast.makeText(getApplicationContext(), "You clicked Item:"+ id + " at position:" + position, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), list.get(position)+" Quiz", Toast.LENGTH_LONG).show();
 
                 Intent i = new Intent(getApplicationContext(), QuizActivity.class);
                 //i.putExtra("Value1", "Android By Javatpoint");

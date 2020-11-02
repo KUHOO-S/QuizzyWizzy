@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -25,9 +25,10 @@ import org.json.JSONObject;
 public class QuizActivity extends AppCompatActivity implements View.OnClickListener {
     TextView quiz_title;
     JSONObject myObject=null;
-    int n=0;            //variable for next question
+    int n=1;            //variable for next question
     String APIResponse;
     int numberOfQuestions=5;
+
     int correctQuestions=0;
     int wrongQuestions=0;
     int missedQuestions=0;
@@ -55,7 +56,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
         callRequest(URL);
         //loadQuestion();
-       // Intent i = new Intent(getApplicationContext(), ResultActivity.class);
+        // Intent i = new Intent(getApplicationContext(), ResultActivity.class);
         //startActivity(i);
 
     }
@@ -111,7 +112,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         quiz_question.setText(data.results[n].question);
 
         TextView quiz_question_number = (TextView) findViewById(R.id.quiz_question_number);
-        quiz_question_number.setText("hi");
+        quiz_question_number.setText(String.valueOf(n));
 
 
 
@@ -145,6 +146,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             System.out.println(data.results[n].correct_answer);
             System.out.println(answer);
             if(answer.equals(data.results[n].correct_answer)) {
+
                 correctQuestions += 1;
                 //Toast.makeText(getApplicationContext(), "hey", Toast.LENGTH_LONG).show();
             }
@@ -157,8 +159,10 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 wrongQuestions+=1;
             }
             //Toast.makeText(getApplicationContext(), "hesadfy", Toast.LENGTH_LONG).show();
-            int greenColorValue = Color.parseColor("#454545");
-            selected.setBackgroundColor(greenColorValue);
+
+
+
+
             n=n+1;
             answer="null";
             loadQuestion();
@@ -193,8 +197,9 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         int selectedColorValue = Color.parseColor("#ED85FF");
         selected.setBackgroundColor(selectedColorValue);
 
-        //MAKE IT GREEN SAURABH
+
         optionSelected=v.getId();
+
 
         String answer=selected.getText().toString();
 
