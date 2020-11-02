@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+
 public class SearchBarActivity extends AppCompatActivity {
     SearchView quizSearch;
     ListView quizList;
@@ -38,7 +39,7 @@ public class SearchBarActivity extends AppCompatActivity {
         list.add("Mathematics");
         urlList.add("https://opentdb.com/api.php?amount=5&category=19&difficulty=easy&type=multiple");
 
-        list.add("Video Games");
+        list.add("Computer Science");
         urlList.add("https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=multiple");
 
         list.add("Science & Environment");
@@ -56,6 +57,11 @@ public class SearchBarActivity extends AppCompatActivity {
         list.add("Animals");
         urlList.add("https://opentdb.com/api.php?amount=5&category=27&difficulty=easy&type=multiple");
 
+        list.add("Geography");
+        urlList.add("https://opentdb.com/api.php?amount=5&category=27&difficulty=easy&type=multiple");
+
+        list.add("Political Science");
+        urlList.add("https://opentdb.com/api.php?amount=5&category=27&difficulty=easy&type=multiple");
 
         adapter= new ArrayAdapter<>(this,R.layout.searchtextcolor,list);
         quizList.setAdapter(adapter);
@@ -78,8 +84,8 @@ public class SearchBarActivity extends AppCompatActivity {
     public void onItemClick(AdapterView<?> l, View v, int position, long id){
                 Toast.makeText(getApplicationContext(), list.get(position)+" Quiz", Toast.LENGTH_LONG).show();
 
-                Intent i = new Intent(getApplicationContext(), QuizActivity.class);
-                //i.putExtra("Value1", "Android By Javatpoint");
+               Intent i = new Intent(getApplicationContext(), QuizActivity.class);
+                i.putExtra("Value1", "Android By Javatpoint");
                 i.putExtra("Quiz", list.get(position));
                 i.putExtra("URL",urlList.get(position));
                 // Set the request code to any code you like, you can identify the

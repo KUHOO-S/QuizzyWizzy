@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void loginFunction(View view){
 
-        Toast.makeText(getApplicationContext(),"hey", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"Welcome", Toast.LENGTH_LONG).show();
         Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
         //i.putExtra("Value1", "Android By Javatpoint");
         i.putExtra("Quiz", "Simple Tutorial");
