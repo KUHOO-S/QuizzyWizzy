@@ -29,16 +29,16 @@
 
 <TextView android:layout_height="wrap_content"
     android:textColor="@color/colorPrimary"
-    android:layout_width="wrap_content" app:layout_constraintTop_toTopOf="@+id/results_correct" app:layout_constraintEnd_toEndOf="parent" android:textSize="16sp"  android:text="NA"  android:layout_marginEnd="32dp" android:id="@+id/results_correct_text"/>
+    android:layout_width="wrap_content" app:layout_constraintTop_toTopOf="@+id/results_correct" app:layout_constraintEnd_toEndOf="parent" android:textSize="16sp"  android:text="NA"  android:layout_marginEnd="32dp" android:id="@+id/correctQuestions"/>
 
 <TextView android:layout_height="wrap_content"
     android:textColor="@color/colorPrimary"
     android:layout_width="wrap_content" app:layout_constraintEnd_toEndOf="parent" android:textSize="16sp"
-    android:text="NA"  android:layout_marginEnd="32dp" android:layout_marginTop="32dp" android:id="@+id/results_wrong_text" app:layout_constraintTop_toBottomOf="@+id/results_correct_text"/>
+    android:text="NA"  android:layout_marginEnd="32dp" android:layout_marginTop="32dp" android:id="@+id/wrongQuestions" app:layout_constraintTop_toBottomOf="@+id/correctQuestions"/>
 
 <TextView android:layout_height="wrap_content"
     android:textColor="@color/colorPrimary"
-    android:layout_width="wrap_content" app:layout_constraintEnd_toEndOf="parent" android:textSize="16sp"  android:text="NA"  android:layout_marginEnd="32dp" android:layout_marginTop="32dp" android:id="@+id/results_missed_text" app:layout_constraintTop_toBottomOf="@+id/results_wrong_text"/>
+    android:layout_width="wrap_content" app:layout_constraintEnd_toEndOf="parent" android:textSize="16sp"  android:text="NA"  android:layout_marginEnd="32dp" android:layout_marginTop="32dp" android:id="@+id/missedQuestions" app:layout_constraintTop_toBottomOf="@+id/wrongQuestions"/>
 
 <Button  android:layout_height="wrap_content" android:layout_width="0dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:textSize="16sp" android:text="Go To Home"  android:layout_marginEnd="32dp" android:layout_marginStart="32dp" android:id="@+id/results_home_btn" app:layout_constraintBottom_toBottomOf="parent" android:textAllCaps="false" android:layout_marginBottom="32dp"
     android:onClick="goHome"/>

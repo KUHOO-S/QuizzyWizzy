@@ -28,12 +28,16 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     int n=0;            //variable for next question
     String APIResponse;
     int numberOfQuestions=5;
-    int score=10;
+    int correctQuestions=0;
+    int wrongQuestions=0;
+    int missedQuestions=0;
     int optionSelected;
+    String answer="null";
     //Button quiz_option_one=(Button)findViewById(R.id.quiz_option_one);
     //quiz_option_one.setOnClickListener(this);
    QuestionSet data;
    Button selected;
+
 
 
 
@@ -133,27 +137,39 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         if (n <numberOfQuestions-1)
         {
 
-            n=n+1;
+
             //Calculate marks
 
             Button selected=(Button)findViewById(optionSelected);
-            String answer=selected.getText().toString();
+            answer=selected.getText().toString();
+            System.out.println(data.results[n].correct_answer);
+            System.out.println(answer);
             if(answer.equals(data.results[n].correct_answer)) {
-                score += 1;
-                Toast.makeText(getApplicationContext(), "hey", Toast.LENGTH_LONG).show();
+                correctQuestions += 1;
+                //Toast.makeText(getApplicationContext(), "hey", Toast.LENGTH_LONG).show();
             }
-            Toast.makeText(getApplicationContext(), "hesadfy", Toast.LENGTH_LONG).show();
+            else if(answer.equals("null"))
+            {
+                missedQuestions+=1;
+            }
+            else
+            {
+                wrongQuestions+=1;
+            }
+            //Toast.makeText(getApplicationContext(), "hesadfy", Toast.LENGTH_LONG).show();
             int greenColorValue = Color.parseColor("#454545");
             selected.setBackgroundColor(greenColorValue);
-
+            n=n+1;
+            answer="null";
             loadQuestion();
 
         }
         else
         {
             Intent i = new Intent(getApplicationContext(), ResultActivity.class);
-            i.putExtra("Quiz", score);
-
+            i.putExtra("correctQuestions",correctQuestions) ;
+            i.putExtra("wrongQuestions",wrongQuestions) ;
+            i.putExtra("missedQuestions",missedQuestions) ;
             startActivity(i);
 
         }
@@ -162,8 +178,17 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        Button quiz_option_one=(Button)findViewById(R.id.quiz_option_one);
+        Button quiz_option_two=(Button)findViewById(R.id.quiz_option_two);
+        Button quiz_option_three=(Button)findViewById(R.id.quiz_option_three);
+        Button quiz_option_four=(Button)findViewById(R.id.quiz_option_four);
 
         selected=(Button)findViewById(v.getId());
+        int defaultColorValue = Color.parseColor("#2D2D2E");
+        quiz_option_one.setBackgroundColor(defaultColorValue);
+        quiz_option_two.setBackgroundColor(defaultColorValue);
+        quiz_option_three.setBackgroundColor(defaultColorValue);
+        quiz_option_four.setBackgroundColor(defaultColorValue);
 
         int selectedColorValue = Color.parseColor("#ED85FF");
         selected.setBackgroundColor(selectedColorValue);
