@@ -11,20 +11,20 @@
         android:id="@+id/txt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="4dp"
 
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="4dp"
         android:layout_marginTop="185dp"
         android:layout_marginBottom="44dp"
         android:text="QuizzyWizzy"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/emailtext"
+        app:layout_constraintStart_toStartOf="@+id/emailtext"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwordtext"
         android:layout_width="210dp"
         android:layout_height="0dp"
         android:layout_marginBottom="55dp"
@@ -34,7 +34,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btn1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/emailtext" />
 
     <Button
         android:id="@+id/btn1"
@@ -47,18 +47,18 @@
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordtext" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/emailtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="79dp"
         android:ems="10"
 
+        android:hint="Email"
         android:inputType="textPersonName"
-        android:hint="Username"
-        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintBottom_toTopOf="@+id/passwordtext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt1" />

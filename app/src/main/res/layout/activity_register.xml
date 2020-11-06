@@ -13,8 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:ems="10"
+        android:hint="Password"
+        android:textColorHint="@color/colorButton"
         android:inputType="textPersonName"
-        android:text="Password"
         android:textColor="@color/colorButton"
         app:layout_constraintStart_toStartOf="@+id/txtphone"
         app:layout_constraintTop_toBottomOf="@+id/txtphone" />
@@ -26,6 +27,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/colorButton"
         android:text="Register"
+
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,8 +40,8 @@
         android:layout_marginTop="85dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        android:textColor="@color/colorButton"
+        android:hint="Name"
+        android:textColorHint="@color/colorButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -51,8 +53,8 @@
         android:layout_marginTop="38dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:text="Email"
-        android:textColor="@color/colorButton"
+        android:hint="Email"
+        android:textColorHint="@color/colorButton"
         app:layout_constraintStart_toStartOf="@+id/txtname"
         app:layout_constraintTop_toBottomOf="@+id/txtname" />
 
@@ -63,8 +65,8 @@
         android:layout_marginTop="33dp"
         android:ems="10"
         android:inputType="phone"
-        android:text="Phone No"
-        android:textColor="@color/colorButton"
+        android:hint="Phone No"
+        android:textColorHint="@color/colorButton"
         app:layout_constraintStart_toStartOf="@+id/txtemail"
         app:layout_constraintTop_toBottomOf="@+id/txtemail" />
 

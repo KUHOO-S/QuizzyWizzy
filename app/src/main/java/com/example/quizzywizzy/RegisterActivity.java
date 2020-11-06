@@ -49,7 +49,6 @@ public class RegisterActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Registered", Toast.LENGTH_LONG).show();
                         Intent i = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(i);
-
                     }
                     else
                         Toast.makeText(getApplicationContext(),"You made an error", Toast.LENGTH_LONG).show();
