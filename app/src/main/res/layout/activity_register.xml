@@ -4,58 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context=".RegisterActivity">
 
     <EditText
         android:id="@+id/txtpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Password"
-        android:textColor="#9C27B0"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="477dp" />
+        android:textColor="@color/colorButton"
+        app:layout_constraintStart_toStartOf="@+id/txtphone"
+        app:layout_constraintTop_toBottomOf="@+id/txtphone" />
 
     <Button
         android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="535dp" />
+        android:layout_marginTop="32dp"
+        android:background="@color/colorButton"
+        android:text="Register"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtpassword" />
 
     <EditText
         android:id="@+id/txtname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="85dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        android:textColor="#9C27B0"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="246dp" />
+        android:textColor="@color/colorButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/txtemail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:text="Email"
-        android:textColor="#9C27B0"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="329dp" />
+        android:textColor="@color/colorButton"
+        app:layout_constraintStart_toStartOf="@+id/txtname"
+        app:layout_constraintTop_toBottomOf="@+id/txtname" />
 
     <EditText
         android:id="@+id/txtphone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
         android:ems="10"
         android:inputType="phone"
         android:text="Phone No"
-        android:textColor="#9C27B0"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="407dp" />
+        android:textColor="@color/colorButton"
+        app:layout_constraintStart_toStartOf="@+id/txtemail"
+        app:layout_constraintTop_toBottomOf="@+id/txtemail" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:text="QuizzyWizzy"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
