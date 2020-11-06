@@ -19,7 +19,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
     public void quizFunction(View view)
     {
-        Intent i = new Intent(getApplicationContext(), Homeactivity.class);
+        Intent i = new Intent(getApplicationContext(), SearchBarActivity.class);
         i.putExtra("Quiz", "Simple Tutorial");
         startActivity(i);
     }

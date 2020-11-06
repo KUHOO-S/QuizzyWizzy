@@ -35,54 +35,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         txt1=(TextView)findViewById(R.id.txt1);
 
-        String URL="https://opentdb.com/api.php?amount=5&category=23&difficulty=easy&type=multiple";
-
-        RequestQueue requestQueue= Volley.newRequestQueue(this);
-        JsonObjectRequest objectRequest =new JsonObjectRequest(
-                Request.Method.GET,
-                URL,
-                null,
-                new Response.Listener<JSONObject>(){
-
-                    @Override
-                    public void onResponse(JSONObject response){
-                        Log.d("myTag", response.toString());
-                        loadData(response.toString());
-                        //JSONObject myObject = null;
-                        try {
-                            myObject = new JSONObject(response.toString());
-
-                            Log.d("myTag", myObject.getString("results"));
-                            //txt1.setText(myObject.get("results").toString());
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-
-
-                    }
-                },
-                new Response.ErrorListener(){
-
-                    @Override
-                    public void onErrorResponse(VolleyError error){
-
-                        Log.d("myTag", error.toString());
-                    }
-                }
-
-
-
-
-
-        );
-        requestQueue.add(objectRequest);
-        //loadData();
-
-
-
-
 
     }
     public void loginFunction(View view){
@@ -97,13 +49,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void registerFunction(View view){
-        Intent i = new Intent(getApplicationContext(), SearchBarActivity.class);
+        Intent i = new Intent(getApplicationContext(), RegisterActivity.class);
         startActivity(i);
 
     }
 
-    public void loadData(String x){
-        QuestionSet data= new Gson().fromJson(x,QuestionSet.class);
-        Log.d("myTag",data.results[0].question);
-    }
+
 }
