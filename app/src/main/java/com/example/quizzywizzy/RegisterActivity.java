@@ -41,6 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String phone=txt3.getText().toString();
                 String password=txt4.getText().toString();
 
+
             f.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {

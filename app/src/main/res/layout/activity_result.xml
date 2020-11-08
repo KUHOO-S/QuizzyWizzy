@@ -9,16 +9,21 @@
 
     android:id="@+id/results_progress" app:layout_constraintTop_toBottomOf="@+id/results_title" style="?android:attr/progressBarStyle"/>
 
-<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" app:layout_constraintTop_toTopOf="@+id/results_progress" app:layout_constraintStart_toStartOf="@+id/results_progress" app:layout_constraintEnd_toEndOf="@+id/results_progress" android:textSize="26sp" android:textColor="@color/colorPrimary" android:text="100%"
-    android:id="@+id/results_percent" app:layout_constraintBottom_toBottomOf="@+id/results_progress"/>
+
 
 <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" app:layout_constraintStart_toStartOf="parent" android:textSize="16sp"
     android:text="Correct Answers"
     android:textColor="@color/colorPrimary"
     android:layout_marginTop="64dp"
-    android:layout_marginStart="32dp" android:id="@+id/results_correct" app:layout_constraintTop_toBottomOf="@+id/results_progress"/>
+    android:layout_marginStart="32dp"
+    android:id="@+id/results_correct"
+    app:layout_constraintTop_toBottomOf="@+id/results_progress"/>
 
-<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" app:layout_constraintStart_toStartOf="parent" android:textSize="16sp"  android:text="Wrong Answers"
+<TextView android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    android:textSize="16sp"
+    android:text="Wrong Answers"
     android:layout_marginTop="32dp"
     android:textColor="@color/colorPrimary"
     android:layout_marginStart="32dp" android:id="@+id/results_wrong" app:layout_constraintTop_toBottomOf="@+id/results_correct"/>
@@ -31,10 +36,23 @@
     android:textColor="@color/colorPrimary"
     android:layout_width="wrap_content" app:layout_constraintTop_toTopOf="@+id/results_correct" app:layout_constraintEnd_toEndOf="parent" android:textSize="16sp"  android:text="NA"  android:layout_marginEnd="32dp" android:id="@+id/correctQuestions"/>
 
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/results_progress"
+        app:layout_constraintStart_toStartOf="@+id/results_progress"
+        app:layout_constraintEnd_toEndOf="@+id/results_progress"
+        android:textSize="26sp" android:textColor="@color/colorPrimary"
+        android:text="100"
+        android:id="@+id/results_percent"
+        app:layout_constraintBottom_toBottomOf="@+id/results_progress"/>
 <TextView android:layout_height="wrap_content"
     android:textColor="@color/colorPrimary"
-    android:layout_width="wrap_content" app:layout_constraintEnd_toEndOf="parent" android:textSize="16sp"
-    android:text="NA"  android:layout_marginEnd="32dp" android:layout_marginTop="32dp" android:id="@+id/wrongQuestions" app:layout_constraintTop_toBottomOf="@+id/correctQuestions"/>
+    android:layout_width="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:textSize="16sp"
+    android:text="NA"  android:layout_marginEnd="32dp"
+    android:layout_marginTop="32dp" android:id="@+id/wrongQuestions"
+    app:layout_constraintTop_toBottomOf="@+id/correctQuestions"/>
 
 <TextView android:layout_height="wrap_content"
     android:textColor="@color/colorPrimary"

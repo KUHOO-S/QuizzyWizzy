@@ -39,7 +39,7 @@
         android:layout_height="10dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="388dp"
+        android:layout_marginBottom="316dp"
         android:background="@drawable/line_draw">
 
     </RelativeLayout>
@@ -86,7 +86,7 @@
 
         <RelativeLayout
             android:layout_width="7dp"
-            android:layout_height="75dp"
+            android:layout_height="match_parent"
             android:background="@drawable/line_draw">
 
         </RelativeLayout>
@@ -128,11 +128,11 @@
         android:layout_height="71dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="105dp"
-        android:onClick="quizFunction"
-        android:textColor="@color/colorPrimaryText"
+        android:layout_marginBottom="54dp"
         android:background="@drawable/line_draw"
-        android:text="PLAY" />
+        android:onClick="quizFunction"
+        android:text="PLAY"
+        android:textColor="@color/colorPrimaryText" />
 
 
 </RelativeLayout>

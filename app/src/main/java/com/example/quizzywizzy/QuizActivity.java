@@ -113,7 +113,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void loadQuestion(){
-        int defaultColorValue = Color.parseColor("#2D2D2E");
+        int defaultColorValue = Color.parseColor("#454545");
         quiz_option_one.setBackgroundColor(defaultColorValue);
         quiz_option_two.setBackgroundColor(defaultColorValue);
         quiz_option_three.setBackgroundColor(defaultColorValue);
@@ -127,7 +127,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         quiz_question.setText(data.results[n].question);
 
         TextView quiz_question_number = (TextView) findViewById(R.id.quiz_question_number);
-        quiz_question_number.setText(String.valueOf(n));
+        quiz_question_number.setText(String.valueOf(n+1));
 
 
 
@@ -168,7 +168,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             {
                 wrongQuestions+=1;
             }
-            //Toast.makeText(getApplicationContext(), "hesadfy", Toast.LENGTH_LONG).show();
 
 
 

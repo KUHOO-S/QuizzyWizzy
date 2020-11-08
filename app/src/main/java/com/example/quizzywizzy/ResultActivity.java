@@ -14,12 +14,14 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         Bundle extras = getIntent().getExtras();
+
         int correctQuestions=extras.getInt("correctQuestions") ;
         int wrongQuestions=extras.getInt("wrongQuestions") ;
         int missedQuestions=extras.getInt("missedQuestions") ;
 
+
         TextView results_percent=(TextView)findViewById(R.id.results_percent);
-        results_percent.setText(String.valueOf(correctQuestions/5));
+        results_percent.setText(String.valueOf(correctQuestions));
 
         TextView val1=(TextView)findViewById(R.id.correctQuestions);
         val1.setText(String.valueOf(correctQuestions));

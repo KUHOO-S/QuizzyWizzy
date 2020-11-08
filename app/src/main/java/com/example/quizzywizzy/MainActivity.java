@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.json.JSONObject;
 
@@ -50,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
                 if(task.isSuccessful())
                 {
                     Toast.makeText(getApplicationContext(),"Welcome", Toast.LENGTH_LONG).show();
+                    FirebaseUser u = F.getCurrentUser();
+                    System.out.println("ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
+                    System.out.println(u.getEmail());
                     Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
                     startActivity(i);
                 }
