@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "330495830574-erqc4i0ev6e6aslvrpjd8u5kcubbg20i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.quizzywizzy",
+            "certificate_hash": "b4b783d4c467d52fcb2b1b7f2abf1f6204aea8f8"
+          }
+        },
+        {
           "client_id": "330495830574-c2k4p2icrnm4p2uft4s4sma5dia6pv8r.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

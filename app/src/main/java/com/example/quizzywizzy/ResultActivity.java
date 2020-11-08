@@ -1,5 +1,6 @@
 package com.example.quizzywizzy;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,7 +8,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.EventListener;
+
 public class ResultActivity extends AppCompatActivity {
+
+    User myuser;
+    DatabaseReference r;
+    int played,lost,won;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +48,42 @@ public class ResultActivity extends AppCompatActivity {
         val3.setText(String.valueOf(missedQuestions));
 
 
+        r= FirebaseDatabase.getInstance().getReference().child("user");
+
+        FirebaseAuth F = FirebaseAuth.getInstance();
+        FirebaseUser u = F.getCurrentUser();
+        System.out.println("ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
+        System.out.println(u.getEmail());
+        String email =u.getEmail();
+        DatabaseReference r1 = FirebaseDatabase.getInstance().getReference().child("user").child("1");
+
+        r1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                played= Integer.parseInt( dataSnapshot.child("played").getValue().toString());
+                lost= Integer.parseInt( dataSnapshot.child("lost").getValue().toString());
+                won= Integer.parseInt(dataSnapshot.child("won").getValue().toString());
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+
+
+        myuser=new User();
+        myuser.setEmail(email);
+
+        myuser.setPlayed(played+1);
+        myuser.setLost(lost);
+        myuser.setWon(won);
+        r.child("1").setValue(myuser);
 
     }
     public void goHome(View view)
