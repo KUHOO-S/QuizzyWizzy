@@ -64,6 +64,9 @@ public class ResultActivity extends AppCompatActivity {
                 played= Integer.parseInt( dataSnapshot.child("played").getValue().toString());
                 lost= Integer.parseInt( dataSnapshot.child("lost").getValue().toString());
                 won= Integer.parseInt(dataSnapshot.child("won").getValue().toString());
+                System.out.println(played);
+                System.out.println(lost);
+                System.out.println(won);
 
 
             }
@@ -80,11 +83,15 @@ public class ResultActivity extends AppCompatActivity {
 
         myuser=new User();
         myuser.setEmail(email);
-
-        myuser.setPlayed(played+1);
+        played+=1;
+        if(correctQuestions>=3)
+            won+=1;
+        else
+            lost+=1;
+        myuser.setPlayed(played);
         myuser.setLost(lost);
         myuser.setWon(won);
-        r.child(id).setValue(myuser);
+        r1.setValue(myuser);
 
     }
     public void goHome(View view)
