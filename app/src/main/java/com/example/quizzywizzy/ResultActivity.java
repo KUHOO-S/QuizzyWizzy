@@ -55,7 +55,8 @@ public class ResultActivity extends AppCompatActivity {
         System.out.println("ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
         System.out.println(u.getEmail());
         String email =u.getEmail();
-        DatabaseReference r1 = FirebaseDatabase.getInstance().getReference().child("user").child("1");
+        String id=u.getUid();
+        DatabaseReference r1 = FirebaseDatabase.getInstance().getReference().child("user").child(id);
 
         r1.addValueEventListener(new ValueEventListener() {
             @Override
@@ -83,7 +84,7 @@ public class ResultActivity extends AppCompatActivity {
         myuser.setPlayed(played+1);
         myuser.setLost(lost);
         myuser.setWon(won);
-        r.child("1").setValue(myuser);
+        r.child(id).setValue(myuser);
 
     }
     public void goHome(View view)
