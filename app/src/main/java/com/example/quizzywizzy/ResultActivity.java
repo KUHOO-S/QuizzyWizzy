@@ -92,6 +92,11 @@ public class ResultActivity extends AppCompatActivity {
         myuser.setLost(lost);
         myuser.setWon(won);
         r1.setValue(myuser);
+        System.out.println("srbsrbsrb");
+        System.out.println(played);
+        System.out.println(lost);
+        System.out.println(won);
+
 
     }
     public void goHome(View view)
