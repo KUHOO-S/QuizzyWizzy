@@ -63,6 +63,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/played"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -98,6 +99,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/won"
                 android:layout_width="43dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
