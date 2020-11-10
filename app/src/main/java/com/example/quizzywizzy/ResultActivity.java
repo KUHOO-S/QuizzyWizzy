@@ -16,9 +16,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.EventListener;
 
-import static java.lang.Thread.sleep;
 
 public class ResultActivity extends AppCompatActivity {
 
@@ -56,7 +54,6 @@ public class ResultActivity extends AppCompatActivity {
         FirebaseUser u = F.getCurrentUser();
         System.out.println(u.getEmail());
 
-        String email =u.getEmail();
         String id=u.getUid();
         DatabaseReference r1 = FirebaseDatabase.getInstance().getReference().child("user").child(id);
 
@@ -77,24 +74,14 @@ public class ResultActivity extends AppCompatActivity {
                     won+=1;
                 else
                     lost+=1;
-
-                System.out.println(played);
-                System.out.println(lost);
-                System.out.println(won);
-                System.out.println("ghiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
-
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                System.out.println("ERORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
+                System.out.println("ERROR");
 
             }
         });
-
-
-
-
     }
     public void goHome(View view)
     {
@@ -106,10 +93,8 @@ public class ResultActivity extends AppCompatActivity {
         String id=u.getUid();
         DatabaseReference r1 = FirebaseDatabase.getInstance().getReference().child("user").child(id);
 
-
         myuser=new User();
         myuser.setEmail(email);
-
         myuser.setPlayed(played);
         myuser.setLost(lost);
         myuser.setWon(won);

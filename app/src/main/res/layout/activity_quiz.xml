@@ -70,7 +70,7 @@
         app:layout_constraintTop_toBottomOf="@+id/quiz_question_number" />
 
     <Button
-        android:id="@+id/quiz_option_one"
+        android:id="@+id/q1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -90,7 +90,7 @@
         app:layout_constraintTop_toBottomOf="@+id/quiz_question" />
 
     <Button
-        android:id="@+id/quiz_option_two"
+        android:id="@+id/q2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -107,10 +107,10 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quiz_option_one" />
+        app:layout_constraintTop_toBottomOf="@+id/q1" />
 
     <Button
-        android:id="@+id/quiz_option_three"
+        android:id="@+id/q3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -127,10 +127,10 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quiz_option_two" />
+        app:layout_constraintTop_toBottomOf="@+id/q2" />
 
     <Button
-        android:id="@+id/quiz_option_four"
+        android:id="@+id/q4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -147,10 +147,10 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quiz_option_three" />
+        app:layout_constraintTop_toBottomOf="@+id/q3" />
 
     <Button
-        android:id="@+id/quiz_next_btn"
+        android:id="@+id/next"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"

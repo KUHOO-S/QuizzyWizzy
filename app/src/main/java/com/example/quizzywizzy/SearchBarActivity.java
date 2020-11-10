@@ -85,11 +85,9 @@ public class SearchBarActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), list.get(position)+" Quiz", Toast.LENGTH_LONG).show();
 
                Intent i = new Intent(getApplicationContext(), QuizActivity.class);
-                i.putExtra("Value1", "Android By Javatpoint");
                 i.putExtra("Quiz", list.get(position));
                 i.putExtra("URL",urlList.get(position));
-                // Set the request code to any code you like, you can identify the
-                // callback via this code
+
                 startActivity(i);
 
 

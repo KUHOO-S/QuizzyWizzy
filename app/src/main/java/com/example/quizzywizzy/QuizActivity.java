@@ -34,17 +34,12 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     int missedQuestions=0;
     int optionSelected;
     String answer="null";
-    //Button quiz_option_one=(Button)findViewById(R.id.quiz_option_one);
-    //quiz_option_one.setOnClickListener(this);
-   QuestionSet data;
-   Button selected;
+    QuestionSet data;
+    Button selected;
     Button quiz_option_one;
     Button quiz_option_two;
     Button quiz_option_three;
     Button quiz_option_four;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,16 +53,12 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         quiz_title = (TextView) findViewById(R.id.quiz_title);
         quiz_title.setText(value1);
 
-        quiz_option_one=(Button)findViewById(R.id.quiz_option_one);
-        quiz_option_two=(Button)findViewById(R.id.quiz_option_two);
-        quiz_option_three=(Button)findViewById(R.id.quiz_option_three);
-        quiz_option_four=(Button)findViewById(R.id.quiz_option_four);
+        quiz_option_one=(Button)findViewById(R.id.q1);
+        quiz_option_two=(Button)findViewById(R.id.q2);
+        quiz_option_three=(Button)findViewById(R.id.q3);
+        quiz_option_four=(Button)findViewById(R.id.q4);
 
         callRequest(URL);
-        //loadQuestion();
-        // Intent i = new Intent(getApplicationContext(), ResultActivity.class);
-        //startActivity(i);
-
     }
 
     public void callRequest(String URL){
@@ -83,11 +74,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                     public void onResponse(JSONObject response){
                         Log.d("myTag", response.toString());
                         APIResponse=response.toString();
-                        //data= new Gson().fromJson(APIResponse,QuestionSet.class);
-
                         loadQuestion();
-                        //loadData(response.toString(),n);
-                        //JSONObject myObject = null;
                         try {
                             myObject = new JSONObject(response.toString());
 
@@ -147,10 +134,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
     public void nextQuestion(View view) {
 
-
-
-            //Calculate marks
-
             Button selected=(Button)findViewById(optionSelected);
             answer=selected.getText().toString();
             System.out.println(data.results[n].correct_answer);
@@ -158,7 +141,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             if(answer.equals(data.results[n].correct_answer)) {
 
                 correctQuestions += 1;
-                //Toast.makeText(getApplicationContext(), "hey", Toast.LENGTH_LONG).show();
             }
             else if(answer.equals("null"))
             {
@@ -206,9 +188,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
 
         optionSelected=v.getId();
-
-
-        String answer=selected.getText().toString();
 
     }
 }

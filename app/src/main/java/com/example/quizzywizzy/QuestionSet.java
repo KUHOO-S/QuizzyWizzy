@@ -6,6 +6,5 @@ public class QuestionSet {
     public QuestionSet(int response_code,Question[] results){
         this.response_code=response_code;
         this.results=results;
-
     }
 }

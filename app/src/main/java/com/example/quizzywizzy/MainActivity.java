@@ -27,9 +27,7 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     TextView txt1;
-    JSONObject myObject=null;
     EditText text1,text2;
-    Button button;
     FirebaseAuth F;
     User myuser;
 
