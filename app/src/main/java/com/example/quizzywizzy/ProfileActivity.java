@@ -21,7 +21,7 @@ public class ProfileActivity extends AppCompatActivity {
     User myuser;
     DatabaseReference r;
     int played,lost,won;
-TextView txt1,txt2;
+    TextView txt1,txt2,txt3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +36,26 @@ TextView txt1,txt2;
 
         txt1.setText(String.valueOf(played));
         txt2.setText(String.valueOf(won));
+
+        FirebaseAuth F = FirebaseAuth.getInstance();
+
+        FirebaseUser u = F.getCurrentUser();
+        String input=u.getEmail();
+
+        StringBuilder input1 = new StringBuilder();
+
+        // append a string into StringBuilder input1
+        input1.append(input);
+
+        // reverse StringBuilder input1
+        input1 = input1.reverse();
+
+        String name = input1.substring(9);
+        txt3=(TextView)findViewById(R.id.textView5);
+        txt3.setText(name);
+
+
+
     }
 
     public void quizFunction(View view)
