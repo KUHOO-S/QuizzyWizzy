@@ -19,6 +19,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.json.JSONObject;
 
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     EditText text1,text2;
     Button button;
     FirebaseAuth F;
-
+    User myuser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +55,27 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Welcome", Toast.LENGTH_LONG).show();
                     FirebaseUser u = F.getCurrentUser();
                     System.out.println("ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
-                    System.out.println(u.getEmail());
+                    String email=u.getEmail();
+
+
+                    FirebaseAuth F = FirebaseAuth.getInstance();
+
+                    String id=u.getUid();
+                    DatabaseReference r1 = FirebaseDatabase.getInstance().getReference().child("user").child(id);
+
+
+                    myuser=new User();
+                    myuser.setEmail(email);
+
+                    myuser.setPlayed(0);
+                    myuser.setLost(0);
+                    myuser.setWon(0);
+                    r1.setValue(myuser);
+
+
+
+
+
                     Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
                     i.putExtra("played",0);
                     i.putExtra("won",0);

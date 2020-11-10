@@ -34,8 +34,8 @@ TextView txt1,txt2;
         won = extras.getInt("won");
 
 
-        txt1.setText(played);
-        txt2.setText(won);
+        txt1.setText(String.valueOf(played));
+        txt2.setText(String.valueOf(won));
     }
 
     public void quizFunction(View view)

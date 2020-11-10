@@ -18,11 +18,13 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.EventListener;
 
+import static java.lang.Thread.sleep;
+
 public class ResultActivity extends AppCompatActivity {
 
     User myuser;
     DatabaseReference r;
-    int played,lost,won;
+    int played,lost,won,correctQuestions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,7 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
         Bundle extras = getIntent().getExtras();
 
-        int correctQuestions=extras.getInt("correctQuestions") ;
+        correctQuestions=extras.getInt("correctQuestions") ;
         int wrongQuestions=extras.getInt("wrongQuestions") ;
         int missedQuestions=extras.getInt("missedQuestions") ;
 
@@ -52,8 +54,8 @@ public class ResultActivity extends AppCompatActivity {
 
         FirebaseAuth F = FirebaseAuth.getInstance();
         FirebaseUser u = F.getCurrentUser();
-        System.out.println("ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
         System.out.println(u.getEmail());
+
         String email =u.getEmail();
         String id=u.getUid();
         DatabaseReference r1 = FirebaseDatabase.getInstance().getReference().child("user").child(id);
@@ -61,18 +63,31 @@ public class ResultActivity extends AppCompatActivity {
         r1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                played= Integer.parseInt( dataSnapshot.child("played").getValue().toString());
-                lost= Integer.parseInt( dataSnapshot.child("lost").getValue().toString());
-                won= Integer.parseInt(dataSnapshot.child("won").getValue().toString());
+
+
+                User dbuser = dataSnapshot.getValue(User.class);
+                System.out.println(dbuser);
+                System.out.println(dbuser.getEmail()+"hmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");
+                played= dbuser.getPlayed();
+                lost= dbuser.getLost();
+                won= dbuser.getWon();
+
+                played+=1;
+                if(correctQuestions>=3)
+                    won+=1;
+                else
+                    lost+=1;
+
                 System.out.println(played);
                 System.out.println(lost);
                 System.out.println(won);
-
+                System.out.println("ghiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+                System.out.println("ERORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
 
             }
         });
@@ -80,27 +95,26 @@ public class ResultActivity extends AppCompatActivity {
 
 
 
+    }
+    public void goHome(View view)
+    {
+
+
+        FirebaseAuth F = FirebaseAuth.getInstance();
+        FirebaseUser u = F.getCurrentUser();
+        String email=u.getEmail();
+        String id=u.getUid();
+        DatabaseReference r1 = FirebaseDatabase.getInstance().getReference().child("user").child(id);
+
 
         myuser=new User();
         myuser.setEmail(email);
-        played+=1;
-        if(correctQuestions>=3)
-            won+=1;
-        else
-            lost+=1;
+
         myuser.setPlayed(played);
         myuser.setLost(lost);
         myuser.setWon(won);
         r1.setValue(myuser);
-        System.out.println("srbsrbsrb");
-        System.out.println(played);
-        System.out.println(lost);
-        System.out.println(won);
 
-
-    }
-    public void goHome(View view)
-    {
         Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
         i.putExtra("played",played);
         i.putExtra("won",won);
