@@ -39,7 +39,7 @@
         android:layout_height="10dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="316dp"
+        android:layout_marginBottom="164dp"
         android:background="@drawable/line_draw">
 
     </RelativeLayout>
