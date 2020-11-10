@@ -54,7 +54,7 @@ public class ProfileActivity extends AppCompatActivity {
         StringBuilder input2 = new StringBuilder();
 
         // append a string into StringBuilder input1
-        input2.append(input);
+        input2.append(name);
 
         // reverse StringBuilder input1
         input2 = input2.reverse();
