@@ -50,9 +50,19 @@ public class ProfileActivity extends AppCompatActivity {
         // reverse StringBuilder input1
         input1 = input1.reverse();
 
-        String name = input1.substring(9);
+        String name = input1.substring(10);
+        StringBuilder input2 = new StringBuilder();
+
+        // append a string into StringBuilder input1
+        input2.append(input);
+
+        // reverse StringBuilder input1
+        input2 = input2.reverse();
+
+
+
         txt3=(TextView)findViewById(R.id.textView5);
-        txt3.setText(name);
+        txt3.setText(input2);
 
 
 
