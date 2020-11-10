@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
                     System.out.println("ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
                     System.out.println(u.getEmail());
                     Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
+                    i.putExtra("played",0);
+                    i.putExtra("won",0);
                     startActivity(i);
                 }
                 else

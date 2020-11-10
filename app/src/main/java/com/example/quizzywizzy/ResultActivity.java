@@ -102,7 +102,8 @@ public class ResultActivity extends AppCompatActivity {
     public void goHome(View view)
     {
         Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
-
+        i.putExtra("played",played);
+        i.putExtra("won",won);
         startActivity(i);
 
 

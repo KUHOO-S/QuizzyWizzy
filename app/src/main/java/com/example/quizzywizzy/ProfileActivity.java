@@ -18,12 +18,24 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ProfileActivity extends AppCompatActivity {
 
+    User myuser;
+    DatabaseReference r;
+    int played,lost,won;
+TextView txt1,txt2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         Bundle extras = getIntent().getExtras();
+        txt1=(TextView)findViewById(R.id.played);
+        txt2=(TextView)findViewById(R.id.won);
 
+        played = extras.getInt("played");
+        won = extras.getInt("won");
+
+
+        txt1.setText(played);
+        txt2.setText(won);
     }
 
     public void quizFunction(View view)
